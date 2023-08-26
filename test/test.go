@@ -6,16 +6,9 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 func findMinMax(nums ...float32) (float32, float32) {
-	for _, num := range nums {
-		result := fmt.Sprintf("%s", reflect.TypeOf(num))
-		if result != "float32" {
-			panic("value is not a float")
-		}
-	}
 	var (
 		min = nums[0]
 		max = nums[0]
@@ -34,5 +27,5 @@ func findMinMax(nums ...float32) (float32, float32) {
 }
 
 func main() {
-	fmt.Println(findMinMax(6, 3, 4, 5, 6))
+	fmt.Println(findMinMax(1, 2, 3, 4, 5))
 }
