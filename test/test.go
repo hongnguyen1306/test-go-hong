@@ -6,9 +6,10 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
-func findMinMax(nums ...float32) (float32, float32) {
+func findMinMax(nums []float64) (float64, float64) {
 	var (
 		min = nums[0]
 		max = nums[0]
@@ -26,6 +27,39 @@ func findMinMax(nums ...float32) (float32, float32) {
 	return min, max
 }
 
+func inputNumbers(n int) []float64 {
+	numbers := make([]float64, n)
+
+	for i := 0; i < n; i++ {
+		fmt.Printf("Nhập phần tử thứ %d: ", i+1)
+		input := ""
+		fmt.Scan(&input)
+
+		num, err := strconv.ParseFloat(input, 64)
+		if err != nil {
+			fmt.Println("Lỗi: Giá trị nhập vào không phải là số thực (float)")
+			return nil
+		}
+
+		numbers[i] = num
+	}
+
+	return numbers
+}
+
 func main() {
-	fmt.Println(findMinMax(1, 2, 3, 4, 5))
+	var n int
+	fmt.Print("Nhập số lượng phần tử (n): ")
+	fmt.Scan(&n)
+
+	if n <= 0 {
+		fmt.Println("Số lượng phần tử phải lớn hơn 0")
+		return
+	}
+
+	numbers := inputNumbers(n)
+
+	min, max := findMinMax(numbers)
+	fmt.Println("Số bé nhất: ", min)
+	fmt.Println("Số lớn nhất: ", max)
 }
