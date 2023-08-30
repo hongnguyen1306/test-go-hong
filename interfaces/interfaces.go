@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type SalaryCalculator interface {
 	CalculateSalary() int
@@ -39,5 +41,4 @@ func main() {
 	cemp1 := Constract{3, 4000}
 	employees := []SalaryCalculator{pemp1, pemp2, cemp1}
 	totalExpense(employees)
-
 }

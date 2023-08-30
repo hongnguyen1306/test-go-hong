@@ -47,7 +47,7 @@ func inputNumbers(n int) []float64 {
 	return numbers
 }
 
-func mainTest() {
+func main() {
 	var n int
 	fmt.Print("Nhập số lượng phần tử (n): ")
 	fmt.Scan(&n)
