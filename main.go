@@ -23,5 +23,4 @@ func main() {
 	})
 	fmt.Println("start service with port: ", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
-
 }
